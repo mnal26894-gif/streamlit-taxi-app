@@ -50,7 +50,7 @@ input_scaled = scaler.transform(input_array)
 # Feature Scaling
 # =====================
 
-input_scaled = scaler.transform(input_data)
+input_scaled = scaler.transform(input_array)
 
 # =====================
 # Predictions
