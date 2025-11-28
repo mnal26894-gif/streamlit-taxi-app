@@ -35,14 +35,16 @@ passenger_count = st.number_input("Passenger Count", min_value=1, value=1)
 # Prepare Input for Model (Exact Feature Order)
 # =====================
 
-input_data = pd.DataFrame({
-    "trip_distance": [trip_distance],
-    "trip_duration": [trip_duration],
-    "base_fare": [base_fare],
-    "per_km_rate": [per_km_rate],
-    "per_minute_rate": [per_minute_rate],
-    "passenger_count": [passenger_count]
-})
+input_array = np.array([[
+    trip_distance,
+    trip_duration,
+    base_fare,
+    per_km_rate,
+    per_minute_rate,
+    passenger_count
+]])
+
+input_scaled = scaler.transform(input_array)
 
 # =====================
 # Feature Scaling
